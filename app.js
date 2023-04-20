@@ -45,7 +45,7 @@ app.post("/interactions", async function (req, res) {
    */
   if (type === InteractionType.APPLICATION_COMMAND) {
     const { name } = data;
-    const ttt = getMessagesInChannel(req.body.channel_id, 10000);
+    const ttt = await getMessagesInChannel(req.body.channel_id, 10000);
 
     // "test" command
     if (name === "test") {
